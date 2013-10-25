@@ -1,0 +1,6 @@
+[submodule "scholarship-system-client"]
+	path = scholarship-system-client
+	url = https://github.com/asenovm/scholarship-system-client.git
+[submodule "scholarship-system-server"]
+	path = scholarship-system-server
+	url = https://github.com/asenovm/scholarship-system-server.git
