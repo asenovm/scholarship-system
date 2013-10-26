@@ -1,0 +1,11 @@
+-- test login
+curl --data "username=user1@example.com&password=1resu" http://localhost:3000/login
+
+-- test registration
+curl --data "email=userХ@example.com&password=Xresu&firstName=firstNameUserХ&surname=surnameUserХ&lastName=lastNameUserХ&facultyId=Х&facultyName=FMI&major=Statistics" http://localhost:3000/register
+
+curl --data "email=example.com&password=Xresu&firstName=firstNameUserХ&surname=surnameUserХ&lastName=lastNameUserХ&facultyId=Х&facultyName=FMI&major=Statistics" http://localhost:3000/register
+
+
+
+email:email, password: password, firstName: firstName, surname: surname, lastName: lastName, facultyId: facultyId, facultyName: facultyName, major: major}
