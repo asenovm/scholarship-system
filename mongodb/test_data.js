@@ -18,8 +18,8 @@ for (var i = 0; i < numberOfDummyUser; i++) {
 		 'firstName': 'firstNameUser' + i, 
 		 'surname': 'surnameUser' + i, 
 		 'lastName': 'lastNameUser' + i, 
-		 'facultyId': 'facultyIdUser' + i, 
-		 'facultyName': i, 
+		 'facultyId': i, 
+		 'facultyName': 'FMI', 
 		};
 		if (i<(numberOfDummyUser/2)) {
 			user.major = "Computer Science"
