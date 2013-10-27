@@ -3,7 +3,14 @@
 #(1)
 echo "must success"
 set USER_CORRECT_CORRECT=userХX@example.com
-curl --data "email=userХX@example.com&password=ХXresu91&firstName=Атанас&surname=Красимиров&lastName=Керезов&facultyId=24295&facultyName=FMI&major=КН" http://localhost:3000/register
+set USER_PASS_CORRECT=ХXresu91
+set USER_FN_CORRECT=Атанас
+set USER_SN_CORRECT=Красимиров
+set USER_LN_CORRECT=Керезов
+set USER_FACNAME_CORRECT=ФМИ
+set USER_FACID_CORRECT=24296
+
+curl --data "email=$USER_CORRECT_CORRECT&password=$USER_PASS_CORRECT&firstName=$USER_FN_CORRECT&surname=$USER_SN_CORRECT&lastName=Керезов&facultyId=24295&facultyName=FMI&major=КН" http://localhost:3000/register
 sleep 2
 
 #(2)
@@ -58,7 +65,7 @@ curl --data "username=userХ@example.com&password=Xresu123" http://localhost:300
 -- test login fail
 curl --data "username=user1@example.com&password=1re" http://localhost:3000/login
 =======
-curl --data "username=userХX@example.com&password=ХXresu91" http://localhost:3000/login
+curl --data "username=userХX@example.com&password=$USER_PASS_CORRECT" http://localhost:3000/login
 -- test login fail
 curl --data "username=user1@example.com&password=1re" http://localhost:3000/login
 >>>>>>> Add DB dummy data
