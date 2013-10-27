@@ -1,20 +1,26 @@
 -- test login success
-curl --data "username=userХX@example.com&password=ХXresu" http://localhost:3000/login
+curl --data "username=userХ@example.com&password=Xresu" http://localhost:3000/login
+
 -- test login fail
 curl --data "username=user1@example.com&password=1re" http://localhost:3000/login
-===================================
--- test registration success
-curl --data "email=userХX@example.com&password=ХXresu&firstName=Атанас&surname=Красимиров&lastName=Керезов&facultyId=24295&facultyName=FMI&major=StatisticsХX" http://localhost:3000/register
 
-curl --data "email=userХX@example.com&password=ХXresu&firstName=firstNameUserХX&surname=surnameUserХX&lastName=lastNameUserХX&facultyId=ХX&facultyName=FMI&major=StatisticsХX" http://localhost:3000/register
+-- test registration
+curl --data "email=userХ@example.com&password=Xresu&firstName=Петър&surname=Иванов&lastName=Петров&facultyId=12345&facultyName=FMI&major=Statistics" http://localhost:3000/register
+
 -- test registration fail
 curl --data "email=example.com&password=Xresu&firstName=firstNameUserХ&surname=surnameUserХ&lastName=lastNameUserХ&facultyId=Х&facultyName=FMI&major=Statistics" http://localhost:3000/register
-===================================
+
 -- test getunapproved applications success
 curl -X GET http://localhost:3000/admin/applications
 
-===================================
+-- test app creation success
+ curl --data "email=userX@example.com&grade=6&schoolYear=3&socialScholarship=false&yearlyScholarship=true&firstParentFirstName=Пешо&firstParentSurname=Иванов&firstParentLastName=Петров&firstParentCompany=Компания&firstParentIncome=400&secondParentFirstName=Иван&secondParentSurname=Петров&secondParentLastName=Петров&secondParentCompany=Фирма&secondParentIncome=1300" http://localhost:3000/application
 
+-- test app creation fail
+ curl --data "email=user1@example.com&grade=6&schoolYear=3&socialScholarship=true&yearlyScholarship=false&firstParentFirstName=Пешо&firstParentSurname=fpsurname&firstParentLastName=fpLastName&firstParentCompany=fpcompany&firstParentIncome=400&secondParentFirstName=secondparent&secondParentSurname=spsurname&secondParentLastName=spLastName&secondParentCompany=spcompany&secondParentIncome=5g00" http://localhost:3000/application
 
+-- test get application success
+curl -G --data "email=userX@example.com" http://localhost:3000/application
 
-email:email, password: password, firstName: firstName, surname: surname, lastName: lastName, facultyId: facultyId, facultyName: facultyName, major: major}
+-- test mark app as deleted
+curl -X DELETE --data "email=userX@example.com" http://localhost:3000/application
