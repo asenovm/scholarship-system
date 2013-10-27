@@ -1,8 +1,17 @@
 -- test login success
+<<<<<<< HEAD
 curl --data "username=userХ@example.com&password=Xresu123" http://localhost:3000/login
 
 -- test login fail
 curl --data "username=user1@example.com&password=1re" http://localhost:3000/login
+=======
+curl --data "username=userХX@example.com&password=ХXresu91" http://localhost:3000/login
+-- test login fail
+curl --data "username=user1@example.com&password=1re" http://localhost:3000/login
+===================================
+-- test registration success
+curl --data "email=userХX@example.com&password=ХXresu91&firstName=Атанас&surname=Красимиров&lastName=Керезов&facultyId=24295&facultyName=FMI&major=StatisticsХX" http://localhost:3000/register
+>>>>>>> Add DB dummy data
 
 -- test registration
 curl --data "email=userХ@example.com&password=Xresu123&firstName=Петър&surname=Иванов&lastName=Петров&facultyId=12345&facultyName=FMI&major=Statistics" http://localhost:3000/register
@@ -13,8 +22,23 @@ curl --data "email=example.com&password=Xresu&firstName=firstNameUserХ&surname=
 -- test getunapproved applications success
 curl -X GET http://localhost:3000/admin/applications
 
+<<<<<<< HEAD
 -- test app creation success
  curl --data "email=userX@example.com&grade=6&schoolYear=3&socialScholarship=false&yearlyScholarship=true&firstParentFirstName=Пешо&firstParentSurname=Иванов&firstParentLastName=Петров&firstParentCompany=Компания&firstParentIncome=400&secondParentFirstName=Иван&secondParentSurname=Петров&secondParentLastName=Петров&secondParentCompany=Фирма&secondParentIncome=1300" http://localhost:3000/application
+=======
+===================================
+-- test approve application success
+curl -X PUT --data "email=4kerezov.atanas@gmail.com" http://localhost:3000/admin/applications
+
+===================================
+-- test approve application success
+curl -X PUT --data "email=4kerezov.atanas@gmail.com" http://localhost:3000/admin/applications
+===================================
+-- test set major settings
+curl -X PUT --data "major=КН&maxOccupacity=100&deadLine=1382864276756" http://localhost:3000/admin/settings
+
+
+>>>>>>> Add DB dummy data
 
 -- test app creation fail
  curl --data "email=user1@example.com&grade=6&schoolYear=3&socialScholarship=true&yearlyScholarship=false&firstParentFirstName=Пешо&firstParentSurname=fpsurname&firstParentLastName=fpLastName&firstParentCompany=fpcompany&firstParentIncome=400&secondParentFirstName=secondparent&secondParentSurname=spsurname&secondParentLastName=spLastName&secondParentCompany=spcompany&secondParentIncome=5g00" http://localhost:3000/application

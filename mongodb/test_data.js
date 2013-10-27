@@ -15,16 +15,16 @@ for (var i = 0; i < numberOfDummyUser; i++) {
 	user = {
 		'email':"user"+ i+"@example.com",
 		 'password': i+"resu",
-		 'firstName': 'firstNameUser' + i, 
-		 'surname': 'surnameUser' + i, 
-		 'lastName': 'lastNameUser' + i, 
+		 'firstName': 'Атанас' + i, 
+		 'surname': 'Атанас' + i, 
+		 'lastName': 'Атанас' + i, 
 		 'facultyId': i, 
-		 'facultyName': 'FMI', 
+		 'facultyName': 'Факултет', 
 		};
 		if (i<(numberOfDummyUser/2)) {
-			user.major = "Computer Science"
+			user.major = "Компютърни науки"
 		}else{
-			user.major = "Apply Mathematics"
+			user.major = "Приложна математика"
 		};
 
 	db.users.save(user);	
@@ -45,13 +45,23 @@ for (var i = 0; i < numberOfDummyUser; i++) {
 	       "secondParentLastName" : "тест",
 	        "secondParentCompany" : "те",
 	         "secondParentIncome" : "6",
-	          "status" : "peding",s 
+	          "status" : "pending", 
 	      };
 		if (i<(numberOfDummyUser/2)) {
-			user.major = "Computer Science"
+			application.status = "pending";
 		}else{
-			user.major = "Apply Mathematics"
-		};
+			application.status = "approved";
+		}
 
-	db.users.save(user);	
+	db.applications.save(application);	
 };
+
+// add dummy majors settings
+for (var i = 0; i < numberOfDummyUser; i++) {
+	major = {
+		major: "Специалност " + i,
+		maxOccupacity : i*10 + i * 7,
+		deadLine: Date.now(),
+	};
+	db.majors.save(major);	
+}
