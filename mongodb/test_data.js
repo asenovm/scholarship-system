@@ -29,3 +29,29 @@ for (var i = 0; i < numberOfDummyUser; i++) {
 
 	db.users.save(user);	
 };
+
+// add dummy applications
+for (var i = 0; i < numberOfDummyUser; i++) {
+	application = { "email" : i + "kerezov.atanas@gmail.com",
+	 "grade" : "6", 
+	 "schoolYear" : "4",
+	  "socialScholarship" : true, 
+	  "firstParentFirstName" : "тест",
+	   "firstParentSurname" : "тест", 
+	   "firstParentLastName" : "тест",
+	    "firstParentIncome" : "6",
+	     "secondParentFirstName" : "тест",
+	      "secondParentSurname" : "тест",
+	       "secondParentLastName" : "тест",
+	        "secondParentCompany" : "те",
+	         "secondParentIncome" : "6",
+	          "status" : "peding",s 
+	      };
+		if (i<(numberOfDummyUser/2)) {
+			user.major = "Computer Science"
+		}else{
+			user.major = "Apply Mathematics"
+		};
+
+	db.users.save(user);	
+};
